@@ -1,0 +1,4 @@
+spring:
+ banner:
+  image:
+   location: classpath:/assets/isOk.jpeg
