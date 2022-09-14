@@ -1,4 +1,8 @@
 spring:
- banner:
-  image:
-   location: classpath:/assets/isOk.jpeg
+  banner:
+    image:
+      location: classpath:/assets/isOk.jpeg
+server:
+  error:
+    whitelabel:
+      enabled: false
