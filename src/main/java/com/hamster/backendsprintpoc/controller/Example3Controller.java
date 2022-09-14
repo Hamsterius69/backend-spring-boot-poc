@@ -1,5 +1,7 @@
 package com.hamster.backendsprintpoc.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,9 @@ import com.hamster.backendsprintpoc.model.Person;
 @Controller
 @RequestMapping("/example3")
 public class Example3Controller {
+	
+	private static final Log LOGGER = LogFactory.getLog(Example3Controller.class);
+	
 	public static final String FORM_VIEW = "form";
 	public static final String RESULT_VIEW = "result";
 	
@@ -31,14 +36,20 @@ public class Example3Controller {
 		
 	@GetMapping("/showform")
 	public String showForm(Model model) {
+		LOGGER.info("INFO TRACE");
+		LOGGER.error("ERROR TRACE");
+		LOGGER.warn("WARNING TRACE");
+		LOGGER.debug("DEBUG TRACE");
 		model.addAttribute("person", new Person());
-		int i = 6/0;
+		// int i = 6/0;
 		return FORM_VIEW;
 	}
 	@PostMapping("/addperson")
 	public ModelAndView addPerson(@ModelAttribute("person") Person person) {
+		LOGGER.info("METHOD: 'addPerson' -- PARAMS: '" + person + "'");
 		ModelAndView mov = new ModelAndView(RESULT_VIEW);
 		mov.addObject("person", person);
+		LOGGER.info("TEMPLATE: '" + RESULT_VIEW + "' -- DATA: '" + person + "'");
 		return mov;
 	}
 }
