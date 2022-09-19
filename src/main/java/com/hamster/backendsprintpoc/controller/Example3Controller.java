@@ -48,7 +48,7 @@ public class Example3Controller {
 	}
 	@PostMapping("/addperson")
 	public ModelAndView addPerson(@Validated @ModelAttribute("person") Person person, BindingResult bindingResult) {
-		// LOGGER.info("METHOD: 'addPerson' -- PARAMS: '" + person + "'");
+		LOGGER.info("METHOD: 'addPerson' -- PARAMS: '" + person + "'");
 		ModelAndView mov = new ModelAndView();
 		if(bindingResult.hasErrors()) {
 			mov.setViewName(FORM_VIEW);
@@ -56,7 +56,7 @@ public class Example3Controller {
 			mov.setViewName(RESULT_VIEW);
 			mov.addObject("person", person);
 		}
-		// LOGGER.info("TEMPLATE: '" + RESULT_VIEW + "' -- DATA: '" + person + "'");
+		LOGGER.info("TEMPLATE: '" + RESULT_VIEW + "' -- DATA: '" + person + "'");
 		return mov;
 	}
 }
