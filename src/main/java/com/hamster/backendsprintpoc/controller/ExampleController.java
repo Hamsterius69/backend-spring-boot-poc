@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hamster.backendsprintpoc.component.ExampleComponent;
-import com.hamster.backendsprintpoc.servise.ExampleService;
+import com.hamster.backendsprintpoc.service.ExampleService;
 
 @Controller
 @RequestMapping("/example")

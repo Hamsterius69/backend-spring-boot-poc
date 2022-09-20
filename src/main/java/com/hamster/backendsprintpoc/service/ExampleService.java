@@ -1,4 +1,4 @@
-package com.hamster.backendsprintpoc.servise;
+package com.hamster.backendsprintpoc.service;
 
 import java.util.List;
 
